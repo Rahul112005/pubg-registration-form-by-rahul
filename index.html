@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI Tournament Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        input, select {
+            background-color: #1a1a1a !important;
+            border: 1px solid #333 !important;
+            color: #e0e0e0 !important;
+        }
+        input:focus, select:focus {
+            border-color: #4a90e2 !important;
+            outline: none !important;
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5) !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Main Registration Card -->
+    <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-sm mx-auto border border-gray-700">
+        <div class="text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-400 mb-2">Welcome to BGMI Tournament</h1>
+            <p class="text-lg text-gray-400 mb-6">Fill Your Details</p>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="registrationForm" class="space-y-6">
+            <!-- Player Details -->
+            <div>
+                <label for="playerName" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <input type="text" id="playerName" name="playerName" required class="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+            </div>
+            <div>
+                <label for="playerAge" class="block text-sm font-medium text-gray-300 mb-1">Age</label>
+                <input type="number" id="playerAge" name="playerAge" required class="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+            </div>
+            <div>
+                <label for="playerPhone" class="block text-sm font-medium text-gray-300 mb-1">Phone No.</label>
+                <input type="tel" id="playerPhone" name="playerPhone" required class="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+            </div>
+            <div>
+                <label for="playerEmail" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <input type="email" id="playerEmail" name="playerEmail" required class="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+            </div>
+
+            <!-- Team Type Selection -->
+            <div>
+                <label for="teamType" class="block text-sm font-medium text-gray-300 mb-1">Choose Play Type</label>
+                <select id="teamType" name="teamType" class="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+                    <option value="solo">Solo</option>
+                    <option value="duo">Duo</option>
+                    <option value="squad">Squad</option>
+                </select>
+                <h6>TOURNAMENT ORGANISER NIRMIT DUDEJA ph.no=9625438981</h6>
+            </div>
+
+            <!-- Dynamic Team Member Fields -->
+            <div id="teamMemberFields" class="space-y-6 hidden">
+                <p class="text-gray-400 text-center text-sm italic">Teammates' Details</p>
+
+                <!-- Duo Member Fields -->
+                <div id="duoFields" class="space-y-6 hidden">
+                    <p class="text-sm font-semibold text-gray-300">Teammate 1</p>
+                    <div>
+                        <label for="duoName" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="duoName" name="duoName" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="duoAge" class="block text-sm font-medium text-gray-300 mb-1">Age</label>
+                        <input type="number" id="duoAge" name="duoAge" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="duoPhone" class="block text-sm font-medium text-gray-300 mb-1">Phone No.</label>
+                        <input type="tel" id="duoPhone" name="duoPhone" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="duoEmail" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="duoEmail" name="duoEmail" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                </div>
+
+                <!-- Squad Member Fields -->
+                <div id="squadFields" class="space-y-6 hidden">
+                    <p class="text-sm font-semibold text-gray-300">Teammate 1</p>
+                    <div>
+                        <label for="squadName1" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="squadName1" name="squadName1" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadAge1" class="block text-sm font-medium text-gray-300 mb-1">Age</label>
+                        <input type="number" id="squadAge1" name="squadAge1" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadPhone1" class="block text-sm font-medium text-gray-300 mb-1">Phone No.</label>
+                        <input type="tel" id="squadPhone1" name="squadPhone1" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadEmail1" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="squadEmail1" name="squadEmail1" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+
+                    <p class="text-sm font-semibold text-gray-300 mt-6">Teammate 2</p>
+                    <div>
+                        <label for="squadName2" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="squadName2" name="squadName2" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadAge2" class="block text-sm font-medium text-gray-300 mb-1">Age</label>
+                        <input type="number" id="squadAge2" name="squadAge2" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadPhone2" class="block text-sm font-medium text-gray-300 mb-1">Phone No.</label>
+                        <input type="tel" id="squadPhone2" name="squadPhone2" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadEmail2" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="squadEmail2" name="squadEmail2" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+
+                    <p class="text-sm font-semibold text-gray-300 mt-6">Teammate 3</p>
+                    <div>
+                        <label for="squadName3" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="squadName3" name="squadName3" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadAge3" class="block text-sm font-medium text-gray-300 mb-1">Age</label>
+                        <input type="number" id="squadAge3" name="squadAge3" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadPhone3" class="block text-sm font-medium text-gray-300 mb-1">Phone No.</label>
+                        <input type="tel" id="squadPhone3" name="squadPhone3" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="squadEmail3" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="squadEmail3" name="squadEmail3" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all duration-300">
+                Register
+            </button>
+        </form>
+
+        <!-- Message Box (replaces alert) -->
+        <div id="messageBox" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-xl text-center">
+                <p id="messageText" class="text-xl font-bold mb-4"></p>
+                <button onclick="document.getElementById('messageBox').classList.add('hidden')" class="bg-blue-600 text-white px-4 py-2 rounded-xl">OK</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamTypeSelect = document.getElementById('teamType');
+            const teamMemberFields = document.getElementById('teamMemberFields');
+            const duoFields = document.getElementById('duoFields');
+            const squadFields = document.getElementById('squadFields');
+            const registrationForm = document.getElementById('registrationForm');
+
+            // Function to show a custom message box
+            function showMessage(text) {
+                const messageBox = document.getElementById('messageBox');
+                const messageText = document.getElementById('messageText');
+                messageText.textContent = text;
+                messageBox.classList.remove('hidden');
+            }
+
+            // Function to handle field visibility
+            function handleTeamTypeChange() {
+                const selectedType = teamTypeSelect.value;
+                teamMemberFields.classList.add('hidden');
+                duoFields.classList.add('hidden');
+                squadFields.classList.add('hidden');
+                
+                // Remove 'required' from all teammate fields first
+                Array.from(duoFields.querySelectorAll('input')).forEach(input => input.removeAttribute('required'));
+                Array.from(squadFields.querySelectorAll('input')).forEach(input => input.removeAttribute('required'));
+
+                if (selectedType === 'duo') {
+                    teamMemberFields.classList.remove('hidden');
+                    duoFields.classList.remove('hidden');
+                    // Add 'required' to duo fields
+                    Array.from(duoFields.querySelectorAll('input')).forEach(input => input.setAttribute('required', ''));
+                } else if (selectedType === 'squad') {
+                    teamMemberFields.classList.remove('hidden');
+                    squadFields.classList.remove('hidden');
+                    // Add 'required' to squad fields
+                    Array.from(squadFields.querySelectorAll('input')).forEach(input => input.setAttribute('required', ''));
+                }
+            }
+
+            // Initial call to set correct field visibility
+            handleTeamTypeChange();
+
+            // Event listener for team type change
+            teamTypeSelect.addEventListener('change', handleTeamTypeChange);
+
+            // Form submission handler
+            registrationForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Get form data
+                const formData = new FormData(registrationForm);
+                const data = Object.fromEntries(formData.entries());
+
+                // You can process the data here, for example, send it to a server.
+                // For this example, we'll just log it.
+                console.log('Registration data:', data);
+
+                // Show a success message
+                showMessage('You have been registered successfully!');
+
+                // Reset the form after successful submission
+                registrationForm.reset();
+                handleTeamTypeChange(); // Reset dynamic fields
+            });
+        });
+    </script>
+</body>
+</html>
